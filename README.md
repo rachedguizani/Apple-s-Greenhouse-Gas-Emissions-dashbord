@@ -52,6 +52,12 @@ RETURN
 DIVIDE(RE2022 - RE2015, RE2015)
 
 # 📈 Dashbord :
+Data visualization was done using Microsoft Power BI Desktop 
+
+![image](https://github.com/user-attachments/assets/562f4d4b-245a-4275-8f18-7a639bfd195f)
+![image](https://github.com/user-attachments/assets/bbfbc90d-62e2-4a07-ae0f-e297325ef6c2)
+
+
 
 
 

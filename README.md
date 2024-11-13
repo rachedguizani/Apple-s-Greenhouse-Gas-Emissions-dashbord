@@ -19,8 +19,8 @@ output : we create star shema using Power Query (star schema is a type of relati
 
 Fact_analyse: - We recovered the primary keys of each dimension                                                                                                          
               - Contains our measurements  
-
-              ![image](https://github.com/user-attachments/assets/291d2626-7bb4-4682-8d69-32edc144b456)
+              
+![image](https://github.com/user-attachments/assets/291d2626-7bb4-4682-8d69-32edc144b456)
 
 
                                           

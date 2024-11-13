@@ -1,7 +1,7 @@
 # Apple's Greenhouse Gas Emissions (dashbord)
 
 # Data understanding
-The dataset includes three CSV tables:
+The dataset includes three CSV tables (available top in the main):
 
 -Greenhouse Gas Emissions: Lists Apple’s greenhouse gas emissions from 2015 to 2022, categorized by source (corporate vs. product life cycle), scope (direct Scope 1, indirect Scopes 2 and 3), and type (emissions vs. removals).
 
@@ -55,10 +55,11 @@ DIVIDE(RE2022 - RE2015, RE2015)
 Data visualization was done using Microsoft Power BI Desktop 
 
 ![image](https://github.com/user-attachments/assets/562f4d4b-245a-4275-8f18-7a639bfd195f)
-
 ![image](https://github.com/user-attachments/assets/bbfbc90d-62e2-4a07-ae0f-e297325ef6c2)
 ![image](https://github.com/user-attachments/assets/ce21c37c-41c8-4cbc-b62a-08f0bd9381d3)
 ![image](https://github.com/user-attachments/assets/5cb44e94-3570-4659-b422-e65d158c9e1f)
+
+
 
 
 

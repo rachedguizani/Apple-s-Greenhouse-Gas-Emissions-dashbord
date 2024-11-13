@@ -8,3 +8,7 @@ The dataset includes three CSV tables:
 -Carbon Footprint by Product: Details emissions from the product life cycle for each baseline iPhone model released between 2015 and 2022.
 
 -Normalizing Factors: Contains Apple’s revenue, market cap, and employee counts for the same period.
+# Data Modelling:
+input :
+![image](https://github.com/user-attachments/assets/a71ae574-8185-4596-8bd3-9a262877850a)
+

@@ -1,1 +1,10 @@
 # Apple's Greenhouse Gas Emissions (dashbord)
+
+# Data understanding
+The dataset includes three CSV tables:
+
+-Greenhouse Gas Emissions: Lists Apple’s greenhouse gas emissions from 2015 to 2022, categorized by source (corporate vs. product life cycle), scope (direct Scope 1, indirect Scopes 2 and 3), and type (emissions vs. removals).
+
+-Carbon Footprint by Product: Details emissions from the product life cycle for each baseline iPhone model released between 2015 and 2022.
+
+-Normalizing Factors: Contains Apple’s revenue, market cap, and employee counts for the same period.

@@ -8,7 +8,7 @@ The dataset includes three CSV tables:
 -Carbon Footprint by Product: Details emissions from the product life cycle for each baseline iPhone model released between 2015 and 2022.
 
 -Normalizing Factors: Contains Apple’s revenue, market cap, and employee counts for the same period.
-# Data Modelling:
+# Data Modelling: Then dataset was cleaned and transformed, it was ready for data modeled.
 input :
 
 ![image](https://github.com/user-attachments/assets/a71ae574-8185-4596-8bd3-9a262877850a)
@@ -21,6 +21,33 @@ Fact_analyse: - We recovered the primary keys of each dimension
               - Contains our measurements  
               
 ![image](https://github.com/user-attachments/assets/291d2626-7bb4-4682-8d69-32edc144b456)
+# Data Analysis Expression (DAX) Calculation :
+Measures used for the visualization:
+
+•	avg_carbone_footprint = AVERAGE(dim_produit[Carbon Footprint] )
+•	Taux de reduction = 
+VAR Emissions2022 = CALCULATE(fact_analyse[Total_emission], dim_periode[Year] = 2022)
+VAR Emissions2015 = CALCULATE(fact_analyse[Total_emission], dim_periode[Year] = 2015)
+RETURN
+DIVIDE(Emissions2022 - Emissions2015, Emissions2015)
+•	Total_emission = SUM(dim_source_emission[Emissions] )
+•	Total_employees = SUM(dim_economique[Employees])
+•	Total_market_capitalization = SUMX(dim_economique,dim_economique[Market Capitalization] )
+•	Total_revenu = SUMX(dim_economique,dim_economique[Revenue] )
+•	Revenue Growth Rate = VAR CurrentYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year])), 'dim_economique'[Revenue]) VAR PreviousYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year]) - 1), 'dim_economique'[Revenue]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
+
+•	Market Capitilation Growth Rate = VAR CurrentYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year])), 'dim_economique'[Market Capitalization]) VAR PreviousYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year]) - 1), 'dim_economique'[Market Capitalization]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
+
+•	Employees Growth Rate = VAR CurrentYearEmployees = SUMX(FILTER('dim_economique', dim_economique[Fiscal Year] = MAX(dim_economique[Fiscal Year])), dim_economique[Employees]) VAR PreviousYearEmployees = SUMX(FILTER('dim_economique', dim_economique[Fiscal Year] = MAX(dim_economique[Fiscal Year]) - 1), 'dim_economique'[Employees]) RETURN DIVIDE(CurrentYearEmployees - PreviousYearEmployees, PreviousYearEmployees)
+•	Taux revenu between 2015 ET 2022 = 
+VAR RE2022 = CALCULATE(fact_analyse[Total_revenu], dim_periode[Year] = 2022)
+VAR RE2015 = CALCULATE(fact_analyse[Total_revenu], dim_periode[Year] = 2015)
+RETURN
+DIVIDE(RE2022 - RE2015, RE2015)
+
+# 📈 Dashbord :
+
+
 
 
                                           

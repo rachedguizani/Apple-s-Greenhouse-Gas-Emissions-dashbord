@@ -30,15 +30,21 @@ VAR Emissions2022 = CALCULATE(fact_analyse[Total_emission], dim_periode[Year] = 
 VAR Emissions2015 = CALCULATE(fact_analyse[Total_emission], dim_periode[Year] = 2015)
 RETURN
 DIVIDE(Emissions2022 - Emissions2015, Emissions2015)
+
 •	Total_emission = SUM(dim_source_emission[Emissions] )
+
 •	Total_employees = SUM(dim_economique[Employees])
+
 •	Total_market_capitalization = SUMX(dim_economique,dim_economique[Market Capitalization] )
+
 •	Total_revenu = SUMX(dim_economique,dim_economique[Revenue] )
+
 •	Revenue Growth Rate = VAR CurrentYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year])), 'dim_economique'[Revenue]) VAR PreviousYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year]) - 1), 'dim_economique'[Revenue]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
 
 •	Market Capitilation Growth Rate = VAR CurrentYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year])), 'dim_economique'[Market Capitalization]) VAR PreviousYearRevenue = SUMX(FILTER('dim_economique', 'dim_economique'[Fiscal Year] = MAX('dim_economique'[Fiscal Year]) - 1), 'dim_economique'[Market Capitalization]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
 
 •	Employees Growth Rate = VAR CurrentYearEmployees = SUMX(FILTER('dim_economique', dim_economique[Fiscal Year] = MAX(dim_economique[Fiscal Year])), dim_economique[Employees]) VAR PreviousYearEmployees = SUMX(FILTER('dim_economique', dim_economique[Fiscal Year] = MAX(dim_economique[Fiscal Year]) - 1), 'dim_economique'[Employees]) RETURN DIVIDE(CurrentYearEmployees - PreviousYearEmployees, PreviousYearEmployees)
+
 •	Taux revenu between 2015 ET 2022 = 
 VAR RE2022 = CALCULATE(fact_analyse[Total_revenu], dim_periode[Year] = 2022)
 VAR RE2015 = CALCULATE(fact_analyse[Total_revenu], dim_periode[Year] = 2015)

@@ -10,5 +10,11 @@ The dataset includes three CSV tables:
 -Normalizing Factors: Contains Apple’s revenue, market cap, and employee counts for the same period.
 # Data Modelling:
 input :
+
 ![image](https://github.com/user-attachments/assets/a71ae574-8185-4596-8bd3-9a262877850a)
+
+output : we create star shema using Power Query (star schema is a type of relational database schema consisting of a single central fact table surrounded by dimension tables)
+
+![image](https://github.com/user-attachments/assets/6f2ab3a7-ea7c-476a-8627-dea79da9dd52)
+
 
